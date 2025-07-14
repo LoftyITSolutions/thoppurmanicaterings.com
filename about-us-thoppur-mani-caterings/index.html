@@ -125,8 +125,8 @@
         <p>Mr. T.A. Manimaran, the Proprietor of “Thoppur Mani Caterings” is a simple, smart working and food-friendly human. He stepped into the catering field in the year of 11 and has been trained by many supremos. His eager towards learning the “Cooking and Serving Art” with dedication, perfection induced him to start up Thoppur Mani Caterings. Mr. Manimaran along with his skilled cooking crew catered to many orders, satisfied the customers and earned a renowned name across South India.</p>
         <p>We strive to make your every event a complete success with joy and fun. Our commitments towards delivering consistent top quality service are our untold vision. We sincerely care and accommodate the needs of even a small event with perfection and dedication.</p>
       </div>
-      <div class="col-12 col-lg-3 p-2 justify-content-center">
-        <div class="card">
+      <div class="col-12 col-lg-3 p-2 justify-content-center aside">
+        <div class="card mycards">
           <div class="card-header">
             Catering Services
           </div>
@@ -148,7 +148,7 @@
      </div>
     </div>
    </section>
-   <section class="bg-light">
+   <section class="bg-light galleries">
    <div class="container pb-4">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
         <div class="col overflow-hidden" style="height: 150px;">
@@ -186,7 +186,20 @@
 <script type="text/javascript">
  jQuery(document).ready(function(){
     jQuery("#cY").text(new Date().getFullYear());
+    moveElement();
+    jQuery(window).resize(function() {
+       moveElement(); // Check again if the window is resized
+    });
  });
+ function moveElement() {
+     // Check the window width
+     if (jQuery(window).width() <= 768) {  // Adjust the threshold as necessary
+         jQuery('.mycards').appendTo('.galleries');
+     } else {
+         // Optional: Move it back if the width is larger
+         jQuery('.mycards').appendTo('.aside');  // Move it back to the card if necessary
+     }
+ }
 </script>
 </body>
 </html>
