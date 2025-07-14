@@ -102,8 +102,8 @@
         </div>
        <p>To view the full menu item click the link:<a title="Thoppur Mani Caterings Menu" href="/thoppur-mani-caterings-menu.pdf" target="_blank">Thoppur Mani Caterings Menu</a></p>
       </div>
-      <div class="col-12 col-lg-3 p-2 justify-content-center">
-        <div class="card">
+      <div class="col-12 col-lg-3 p-2 justify-content-center aside">
+        <div class="card mycards">
           <div class="card-header">
             Catering Services
           </div>
@@ -125,7 +125,7 @@
      </div>
     </div>
    </section>
-   <section class="bg-light">
+   <section class="bg-light galleries">
    <div class="container pb-4">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
         <div class="col overflow-hidden" style="height: 150px;">
@@ -163,7 +163,20 @@
 <script type="text/javascript">
  jQuery(document).ready(function(){
     jQuery("#cY").text(new Date().getFullYear());
+    moveElement();
+    jQuery(window).resize(function() {
+       moveElement(); // Check again if the window is resized
+    });
  });
+ function moveElement() {
+     // Check the window width
+     if (jQuery(window).width() <= 768) {  // Adjust the threshold as necessary
+         jQuery('.mycards').appendTo('.galleries');
+     } else {
+         // Optional: Move it back if the width is larger
+         jQuery('.mycards').appendTo('.aside');  // Move it back to the card if necessary
+     }
+ }
 </script>
 </body>
 </html>
