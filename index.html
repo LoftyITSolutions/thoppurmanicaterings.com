@@ -275,14 +275,14 @@ function loadVideo(index) {
   //player.play();
 }
 function moveElement() {
-            // Check the window width
-            if (jQuery(window).width() < 768) {  // Adjust the threshold as necessary
-                jQuery('.mycards').appendTo('.galleries');
-            } else {
-                // Optional: Move it back if the width is larger
-                jQuery('.mycards').appendTo('.aside');  // Move it back to the card if necessary
-            }
-   }
+     // Check the window width
+     if (jQuery(window).width() <= 768) {  // Adjust the threshold as necessary
+         jQuery('.mycards').appendTo('.galleries');
+     } else {
+         // Optional: Move it back if the width is larger
+         jQuery('.mycards').appendTo('.aside');  // Move it back to the card if necessary
+     }
+ }
 </script>
 </body>
 </html>
